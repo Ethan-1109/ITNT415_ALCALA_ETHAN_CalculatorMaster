@@ -43,6 +43,8 @@ def main():
         num1 = get_number("Enter first number: ")
         num2 = get_number("Enter second number: ")
         result = multiply(num1, num2)
+        if num1 == 0 or num2 == 0:
+            print("Note: multiplying by zero always gives zero.")
         print(f"Result: {num1} * {num2} = {result}")
     else:
         print("That option isn't built yet on this branch.")
