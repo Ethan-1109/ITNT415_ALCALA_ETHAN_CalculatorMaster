@@ -38,7 +38,7 @@ def main():
         num1 = get_number("Enter first number: ")
         num2 = get_number("Enter second number: ")
         result = subtract(num1, num2)
-        print(f"Result: {result}")
+        print(f"Result: {num1} - {num2} = {result}")
     else:
         print("That option isn't built yet on this branch.")
 
