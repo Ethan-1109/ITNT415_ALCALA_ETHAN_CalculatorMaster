@@ -18,12 +18,20 @@ def print_menu():
     print("4. Division")
     print("5. Exit")
 
+def get_number(prompt):
+    while True:
+        value = input(prompt).strip()
+        try:
+            return float(value)
+        except ValueError:
+            print("Invalid input. Please enter a numeric value.")
+
 def main():
     print_menu()
     choice = input("Choose an option (1-5): ")
     if choice == "1":
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
+        num1 = get_number("Enter first number: ")
+        num2 = get_number("Enter second number: ")
         result = add(num1, num2)
         print(f"Result: {result}")
     else:
