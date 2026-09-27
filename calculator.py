@@ -1,5 +1,5 @@
 def add(a, b):
-    pass
+    return a + b
 
 def subtract(a, b):
     pass
@@ -20,6 +20,14 @@ def print_menu():
 
 def main():
     print_menu()
+    choice = input("Choose an option (1-5): ")
+    if choice == "1":
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+        result = add(num1, num2)
+        print(f"Result: {result}")
+    else:
+        print("That option isn't built yet on this branch.")
 
 if __name__ == "__main__":
     main()
