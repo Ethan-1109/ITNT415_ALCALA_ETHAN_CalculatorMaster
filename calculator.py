@@ -5,7 +5,7 @@ def subtract(a, b):
     return a - b
 
 def multiply(a, b):
-    pass
+    return a * b
 
 def divide(a, b):
     pass
@@ -39,6 +39,13 @@ def main():
         num2 = get_number("Enter second number: ")
         result = subtract(num1, num2)
         print(f"Result: {num1} - {num2} = {result}")
+    elif choice == "3":
+        num1 = get_number("Enter first number: ")
+        num2 = get_number("Enter second number: ")
+        result = multiply(num1, num2)
+        if num1 == 0 or num2 == 0:
+            print("Note: multiplying by zero always gives zero.")
+        print(f"Result: {num1} * {num2} = {result}")
     else:
         print("That option isn't built yet on this branch.")
 
