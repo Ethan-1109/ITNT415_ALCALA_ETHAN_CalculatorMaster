@@ -8,7 +8,9 @@ def multiply(a, b):
     return a * b
 
 def divide(a, b):
-    pass
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero.")
+    return round(a / b, 4)
 
 def print_menu():
     print("\n===== Calculator Master =====")
@@ -46,6 +48,14 @@ def main():
         if num1 == 0 or num2 == 0:
             print("Note: multiplying by zero always gives zero.")
         print(f"Result: {num1} * {num2} = {result}")
+    elif choice == "4":
+        num1 = get_number("Enter first number: ")
+        num2 = get_number("Enter second number: ")
+        try:
+            result = divide(num1, num2)
+            print(f"Result: {num1} / {num2} = {result}")
+        except ZeroDivisionError as e:
+            print(f"Error: {e}")
     else:
         print("That option isn't built yet on this branch.")
 
