@@ -29,35 +29,39 @@ def get_number(prompt):
             print("Invalid input. Please enter a numeric value.")
 
 def main():
-    print_menu()
-    choice = input("Choose an option (1-5): ")
-    if choice == "1":
-        num1 = get_number("Enter first number: ")
-        num2 = get_number("Enter second number: ")
-        result = add(num1, num2)
-        print(f"Result: {result}")
-    elif choice == "2":
-        num1 = get_number("Enter first number: ")
-        num2 = get_number("Enter second number: ")
-        result = subtract(num1, num2)
-        print(f"Result: {num1} - {num2} = {result}")
-    elif choice == "3":
-        num1 = get_number("Enter first number: ")
-        num2 = get_number("Enter second number: ")
-        result = multiply(num1, num2)
-        if num1 == 0 or num2 == 0:
-            print("Note: multiplying by zero always gives zero.")
-        print(f"Result: {num1} * {num2} = {result}")
-    elif choice == "4":
-        num1 = get_number("Enter first number: ")
-        num2 = get_number("Enter second number: ")
-        try:
-            result = divide(num1, num2)
-            print(f"Result: {num1} / {num2} = {result}")
-        except ZeroDivisionError as e:
-            print(f"Error: {e}")
-    else:
-        print("That option isn't built yet on this branch.")
+    while True:
+        print_menu()
+        choice = input("Choose an option (1-5): ")
+        if choice == "5":
+            print("Exiting Calculator Master. Goodbye!")
+            break
+        elif choice == "1":
+            num1 = get_number("Enter first number: ")
+            num2 = get_number("Enter second number: ")
+            result = add(num1, num2)
+            print(f"Result: {result}")
+        elif choice == "2":
+            num1 = get_number("Enter first number: ")
+            num2 = get_number("Enter second number: ")
+            result = subtract(num1, num2)
+            print(f"Result: {num1} - {num2} = {result}")
+        elif choice == "3":
+            num1 = get_number("Enter first number: ")
+            num2 = get_number("Enter second number: ")
+            result = multiply(num1, num2)
+            if num1 == 0 or num2 == 0:
+                print("Note: multiplying by zero always gives zero.")
+            print(f"Result: {num1} * {num2} = {result}")
+        elif choice == "4":
+            num1 = get_number("Enter first number: ")
+            num2 = get_number("Enter second number: ")
+            try:
+                result = divide(num1, num2)
+                print(f"Result: {num1} / {num2} = {result}")
+            except ZeroDivisionError as e:
+                print(f"Error: {e}")
+        else:
+            print("Invalid option. Please choose a number from 1 to 5.")
 
 if __name__ == "__main__":
     main()
